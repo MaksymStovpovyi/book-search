@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Form, Button, Alert } from 'react-bootstrap';
 // import graphQL
 import { useMutation } from '@apollo/client';
-import { loginUser } from '../utils/mutations';
+import { LOGIN_USER } from '../utils/mutations';
 import Auth from '../utils/auth';
 
 const LoginForm = () => {
@@ -11,7 +11,7 @@ const LoginForm = () => {
   const [validated] = useState(false);
   const [showAlert, setShowAlert] = useState(false);
   // login mutation
-  const [login] = useMutation(loginUser);
+  const [login] = useMutation(LOGIN_USER);
 
   // input change
   const handleInputChange = (event) => {
