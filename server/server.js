@@ -12,6 +12,12 @@ const server = new ApolloServer({
   typeDefs,
   resolvers,
   context: authMiddleware,
+  // error from heroku
+  cache: {
+    type: 'bounded',
+    maxSize: 1000,
+  },
+  persistedQueries: false
 });
 
 app.use(express.urlencoded({ extended: true }));
