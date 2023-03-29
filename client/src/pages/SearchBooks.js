@@ -63,7 +63,7 @@ const SearchBooks = () => {
     }
     const bookToSave = searchedBooks.find((book) => book.bookId === bookId);
     try {
-      const { data } = await saveBook({variables: bookToSave});
+      await saveBook({variables: bookToSave});
       setSavedBookIds([...savedBookIds, bookToSave.bookId]);
     } catch (err) {
       console.error(err);

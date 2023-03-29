@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import {
   Container,
   Card,
@@ -30,7 +30,7 @@ const SavedBooks = () => {
       window.location.replace('/');
     }
     try {
-      const { data } = await removeBook({ variables: {bookId}});
+      await removeBook({ variables: {bookId}});
 
       // upon success, remove book's id from localStorage
       removeBookId(bookId);
